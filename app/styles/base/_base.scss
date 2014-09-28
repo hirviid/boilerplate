@@ -1,0 +1,31 @@
+html { height: 100%; padding:0; margin:0; font-size: 62.5%; }
+
+body {
+	overflow-x: hidden;
+	min-height:100%;
+	position:relative;
+	@include font-size($default-fontsize);
+}
+
+.container {
+
+  @include container($mobile-width);
+
+  @include clearfix;
+
+  padding: 0 0.5em;
+  position:relative;
+
+  @include respond-min($break-1) {
+    max-width: $break-1-stop;
+  }
+
+  @include respond-min($break-2) {
+    max-width: $break-2-stop;
+  }
+
+  @include respond-min($break-3) {
+    max-width: $break-3-stop;
+  }
+
+}

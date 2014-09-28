@@ -32,10 +32,13 @@ $susy: (
 	global-box-sizing: border-box,
 	use-custom: (rem:true)
 );
-
-$break-1 : 600px;
-$break-2 : 800px;
-$break-3 : 1024px;
+$mobile-width : 380px;
+$break-1 :      600px;
+$break-1-stop:  680px;
+$break-2 :      800px;
+$break-2-stop : 960px;
+$break-3 :      1024px;
+$break-3-stop : 1140px;
 
 // ---------------------------------------------------------------------------
 // Other configuration
