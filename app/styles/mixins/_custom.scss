@@ -1,0 +1,55 @@
+$sprite-grid:30px;
+$sprite-path:'../img/admin/mastersprite.png';
+
+@mixin line-height($heightValue: 1.4 ){
+	line-height: ($heightValue * 10) + px; //fallback for old browsers
+	line-height: $heightValue + rem;
+}
+@mixin font-size($sizeValue: 1.4) {
+  	font-size: ($sizeValue * 10) + px;
+  	font-size: $sizeValue + rem;
+}
+
+@mixin inline-block() {
+	display: inline-block;
+	*display: inline;
+	zoom:1;
+}
+
+@mixin sprite($x: 0, $y: 0, $xOffset: 0, $yOffset: 0) {
+    background-image: url($sprite-path);
+    background-repeat: no-repeat;
+    background-position: (($xOffset + (($x * $sprite-grid)))*-1) (($yOffset + (($y * $sprite-grid)))*-1);
+}
+
+/* Clearfix */
+@mixin clearfix() {
+    & {
+        *zoom: 1;
+    }
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin opacity($val) {
+  opacity: $val;
+  filter: alpha(opacity=$val*100);
+}
+
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}

@@ -1,0 +1,32 @@
+//http://jakearchibald.github.io/sass-ie/
+@import "breakpoint";
+
+$fix-mqs: false !default;
+
+@mixin respond-min($width) {
+  // If we're outputting for a fixed media query set...
+  @if $fix-mqs {
+    // ...and if we should apply these rules...
+    @if $fix-mqs >= $width {
+      // ...output the content the user gave us.
+      @content;
+    }
+  }
+  @else {
+    // Otherwise, output it using a regular media query
+    @include breakpoint($width) {
+      @content;
+    }
+  }
+}
+// I also have a respond-max mixin, that does what you might expect
+
+
+$old-ie: false !default;
+
+@mixin old-ie {
+  // Only use this content if we're dealing with old IE
+  @if $old-ie {
+    @content;
+  }
+}

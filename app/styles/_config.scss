@@ -1,0 +1,43 @@
+// Global variables and common values (colors, font-sizes & families, breakpoints)
+
+
+// ---------------------------------------------------------------------------
+// Colors
+
+$beige: #f8f6f1;
+$dark: #4d4b47;
+
+$white: #fafafa;
+$lightGrey: #eeeeee;
+$grey: #999999;
+$darkGrey: #4d4d4d;
+$black: #1a1a1a;
+
+$green: green;
+$yellow: yellow;
+$blue: blue;
+$red: red;
+
+// ---------------------------------------------------------------------------
+// Variables
+
+$default-fontsize: 1.8;
+$default-border-radius: 5px;
+
+
+// ---------------------------------------------------------------------------
+// Basic Grid
+
+$susy: (
+	global-box-sizing: border-box,
+	use-custom: (rem:true)
+);
+
+$break-1 : 600px;
+$break-2 : 800px;
+$break-3 : 1024px;
+
+// ---------------------------------------------------------------------------
+// Other configuration
+
+@include border-box-sizing;
